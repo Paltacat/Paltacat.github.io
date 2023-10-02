@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Paltacat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+</head>
+
+<body>
+    <header>
+        <a href="#home" class="logo">
+            <img src="assets/images/logo.jpg" class="logo-img">
+        </a>
+        <ul class="navlist">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#drawings">Drawings</a></li>
+            <li><a href="#animations">Animations</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <section class="home show-animate" id="home">
+        <h1 class="animate">Welcome to my portfolio!!</h1>
+        <p class="animate">Here you can watch all my works.</p>
+    </section>
+
+    <section class="about-me show-animate" id="about-me">
+        <h1 class="animate">About Me</h1>
+        <div class="about-me-container">
+            <p class="animate">Hello!! I'm Ignacia Vidal or "Palta Cat", I'm a 2D animator, character designer, concept
+                artist and this is my humble portafolio.</p>
+        </div>
+    </section>
+
+    <section class="drawings show-animate" id="drawings">
+        <h1 class="animate">Drawings</h1>
+        <div class="images" id="drawings-row-1"></div>
+        <div class="images" id="drawings-row-2"></div>
+        <div class="page-selector">
+            <a onclick="displayGallery(1)" class="button-style images" id="drawings-page-1">1</a>
+            <a onclick="displayGallery(2)" class="button-style images" id="drawings-page-2">2</a>
+            <a onclick="displayGallery(3)" class="button-style images" id="drawings-page-3">3</a>
+            <a onclick="displayGallery(4)" class="button-style images" id="drawings-page-4">4</a>
+            <a onclick="displayGallery(5)" class="button-style images" id="drawings-page-5">5</a>
+        </div>
+    </section>
+
+    <section class="animations show-animate" id="animations">
+        <h1 class="animate">Animations</h1>
+        <div class="images" id="animations-row-1"></div>
+        <div class="images" id="animations-row-2"></div>
+        <div class="page-selector">
+            <a onclick="displayAnimations(1)" class="button-style images" id="animations-page-1">1</a>
+            <a onclick="displayAnimations(2)" class="button-style images" id="animations-page-2">2</a>
+        </div>
+    </section>
+
+    <section class="videos show-animate" id="videos">
+        <h1 class="animate">Videos</h1>
+        <div class="videos" id="videos-row-1"></div>
+        <div class="videos" id="videos-row-2"></div>
+        <div class="page-selector">
+            <a onclick="displayVideos(1)" class="button-style images" id="videos-page-1">1</a>
+            <a onclick="displayVideos(2)" class="button-style images" id="videos-page-2">2</a>
+    </section>
+
+    <section class="contact show-animate" id="contact">
+        <h1 class="animate">Contact me!<span class="showRight-animate"></span></h1>
+        <p class="animate">paltacat@gmail.com<span class="showRight-animate"></span></p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/lightbox-plus-jquery.js"></script>
+</body>
+
+</html>
