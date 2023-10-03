@@ -9,6 +9,7 @@
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
     color: white;
+    scroll-behavior: smooth;
 }
 
 body, html {
