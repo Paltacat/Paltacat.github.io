@@ -10,9 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
 </head>
 
 <body>
+    
     <header>
         <a href="#home" class="logo">
             <img src="assets/images/logo.jpg" class="logo-img">
@@ -21,17 +23,19 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about-me">About Me</a></li>
             <li><a href="#drawings">Drawings</a></li>
-            <li><a href="#animations">Animations</a></li>
-            <li><a href="#videos">Videos</a></li>
+            <li class="rotate"><a href="#animations">Animations</a></li>
+            <li><a href="#reel">Reel</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="bx bx-menu" id="menu-icon"></div>
+        <div class="bx bx-menu" id="menu-icon"></div>   <!-- WIP -->
     </header>
 
-    <section class="home show-animate" id="home">
-        <h1 class="animate">Welcome to my portfolio!!</h1>
-        <p class="animate">Here you can watch all my works.</p>
-    </section>
+    <div transition-style="in:wipe:right">
+        <section class="home show-animate" id="home">
+            <h1 class="animate">Welcome to my portfolio!!</h1>
+            <p class="animate">Here you can watch all my works.</p>
+        </section>
+    </div>
 
     <section class="about-me show-animate" id="about-me">
         <h1 class="animate">About Me</h1>
@@ -64,13 +68,16 @@
         </div>
     </section>
 
-    <section class="videos show-animate" id="videos">
-        <h1 class="animate">Videos</h1>
-        <div class="videos" id="videos-row-1"></div>
-        <div class="videos" id="videos-row-2"></div>
-        <div class="page-selector">
-            <a onclick="displayVideos(1)" class="button-style images" id="videos-page-1">1</a>
-            <a onclick="displayVideos(2)" class="button-style images" id="videos-page-2">2</a>
+    <section class="reel show-animate" id="reel">
+        <h1 class="animate">Reel</h1>
+        <div class="vimeo animate">
+            <iframe
+                src="https://player.vimeo.com/video/868951760?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                title="Portafolio Ignacia Vidal (2023)">
+            </iframe>
+        </div>
+
     </section>
 
     <section class="contact show-animate" id="contact">
