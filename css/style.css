@@ -10,7 +10,6 @@
     font-family: 'Rubik', sans-serif;
     color: white;
     scroll-behavior: smooth;
-    background-image: "../assets/images/contact_background.png";
 }
 
 body, html {
@@ -190,7 +189,7 @@ section.show-animate .animate {
 
 .contact {
     background: #fe9c5a;
-    background-image: url("../assets/images/contact_background.png");
+    background-image: url("../assets/images/contact_background_3.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
