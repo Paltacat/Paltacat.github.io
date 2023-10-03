@@ -10,6 +10,7 @@
     font-family: 'Rubik', sans-serif;
     color: white;
     scroll-behavior: smooth;
+    background-image: "../assets/images/contact_background.png";
 }
 
 body, html {
@@ -59,13 +60,13 @@ header .logo .logo-img:hover{
         right: -100%;
         width: 300px;
         height: 40vh;
-        display: block;
-        background: #FE9B5A;
+        background: rgba(255, 255, 255, 0.138);
         align-items: center;
         flex-direction: column;
         justify-content: center;
         padding: 50px 20px;
         transition: all .55s ease;
+        display: block;
     }
 
     .navlist a {
@@ -109,7 +110,7 @@ ul {
 
 #menu-icon{
     color: white;
-    font-size: 30px;
+    font-size: 35px;
     z-index: 10001;
     cursor: pointer;
     display: none;
@@ -123,6 +124,7 @@ section {
     flex-direction: column;
     min-height: 100vh;
     background: #B4C775;
+
 }
 
 h1 {
@@ -145,6 +147,7 @@ p {
 section .animate {
     transition: 1s;
     filter: blur(10px);
+    
 }
 
 section.show-animate .animate {
@@ -186,7 +189,12 @@ section.show-animate .animate {
 }
 
 .contact {
-    background: #FE9B5A;
+    background: #fe9c5a;
+    background-image: url("../assets/images/contact_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .contact .showRight-animate {
@@ -210,6 +218,23 @@ section.show-animate .animate {
 .contact p {
     color: white;
     text-align: center;
+}
+
+.contact a {
+    color: white;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    margin: 0 20px;
+    transition: all .55s ease;
+    top: 0;
+}
+
+.contact a:hover {
+    color: black;
+    font-size: 55px;
 }
 
 /* DRAWINGS */
