@@ -48,6 +48,38 @@ header .logo .logo-img:hover{
     border: 4px solid grey;
 }
 
+@media (max-width: 990px){
+    #menu-icon{
+        display: block;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 300px;
+        height: 40vh;
+        display: block;
+        background: #FE9B5A;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px 20px;
+        transition: all .55s ease;
+    }
+
+    .navlist a {
+        margin-left: 0;
+        display: block;
+        margin: 7px 0;
+    }
+
+    .navlist.open {
+        right: 0;
+    }
+    
+}
+
 .navlist {
     display: flex;
 
@@ -59,7 +91,7 @@ ul {
 
 .navlist a{
     text-decoration: none;
-    margin-left: 60px;
+    margin-left: 40px;
     color: white;
     font-size: 15px;
     font-weight: 600;
@@ -82,6 +114,7 @@ ul {
     cursor: pointer;
     display: none;
 }
+
 
 section {
     display: flex;
@@ -179,13 +212,7 @@ section.show-animate .animate {
     text-align: center;
 }
 
-.drawings .animate {
-    transform: scale(0.7);
-}
-
-.drawings.show-animate .animate {
-    transform: scale(1);
-}
+/* DRAWINGS */
 
 .drawings {
     background: #13284f;
@@ -195,13 +222,20 @@ section.show-animate .animate {
     color: #ffffff;
 }
 
+.drawings .animate {
+    transform: scale(0.7);
+}
+
+.drawings.show-animate .animate {
+    transform: scale(1);
+}
+
 .drawings .images img {
-    max-width: calc(100vh / 4);
-    border: 4px solid white;
-    margin: 0 30px;
-    justify-items: center;
-    align-items: center;
-    background-color: white;
+    border-radius: 8px;
+    width: calc(100vh / 4);
+    height: auto;
+    box-shadow: 0px 0px 30px #000;
+    margin: 30px 30px;
 }
 
 .drawings .images img:hover {
@@ -231,7 +265,7 @@ section.show-animate .animate {
 }
 
 .drawings .page-selector a:hover:not(.active) {
-    background-color: #ddd;
+    background-color: #7b7b7b;
     transition: 0.3s;
     transform: scale(1.1);
 }
@@ -258,12 +292,11 @@ section.show-animate .animate {
 }
 
 .animations .images img {
-    max-width: calc(100vh / 4);
-    border: 4px solid white;
-    margin: 0 30px;
-    justify-items: center;
-    align-items: center;
-    background-color: white;
+    border-radius: 8px;
+    width: calc(100vh / 4);
+    height: auto;
+    box-shadow: 0px 0px 30px #000;
+    margin: 30px 30px;
 }
 
 .animations .images img:hover {

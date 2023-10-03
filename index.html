@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    
+
     <header>
         <a href="#home" class="logo">
             <img src="assets/images/logo.jpg" class="logo-img">
@@ -23,11 +23,11 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about-me">About Me</a></li>
             <li><a href="#drawings">Drawings</a></li>
-            <li class="rotate"><a href="#animations">Animations</a></li>
+            <li><a href="#animations">Animations</a></li>
             <li><a href="#reel">Reel</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="bx bx-menu" id="menu-icon"></div>   <!-- WIP -->
+        <div class="bx bx-menu" id="menu-icon"></div> <!-- WIP -->
     </header>
 
     <div transition-style="in:wipe:right">
@@ -37,6 +37,7 @@
         </section>
     </div>
 
+
     <section class="about-me show-animate" id="about-me">
         <h1 class="animate">About Me</h1>
         <div class="about-me-container">
@@ -45,27 +46,17 @@
         </div>
     </section>
 
+
     <section class="drawings show-animate" id="drawings">
         <h1 class="animate">Drawings</h1>
-        <div class="images" id="drawings-row-1"></div>
-        <div class="images" id="drawings-row-2"></div>
-        <div class="page-selector">
-            <a onclick="displayGallery(1)" class="button-style images" id="drawings-page-1">1</a>
-            <a onclick="displayGallery(2)" class="button-style images" id="drawings-page-2">2</a>
-            <a onclick="displayGallery(3)" class="button-style images" id="drawings-page-3">3</a>
-            <a onclick="displayGallery(4)" class="button-style images" id="drawings-page-4">4</a>
-            <a onclick="displayGallery(5)" class="button-style images" id="drawings-page-5">5</a>
-        </div>
+        <div class="images" id="drawings-container"></div>
+        <div class="page-selector" id="page-selector-drawings"></div>
     </section>
 
     <section class="animations show-animate" id="animations">
         <h1 class="animate">Animations</h1>
-        <div class="images" id="animations-row-1"></div>
-        <div class="images" id="animations-row-2"></div>
-        <div class="page-selector">
-            <a onclick="displayAnimations(1)" class="button-style images" id="animations-page-1">1</a>
-            <a onclick="displayAnimations(2)" class="button-style images" id="animations-page-2">2</a>
-        </div>
+        <div class="images" id="animations-container"></div>
+        <div class="page-selector" id="page-selector-animations"></div>
     </section>
 
     <section class="reel show-animate" id="reel">

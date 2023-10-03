@@ -21,6 +21,15 @@ window.onscroll = () => {
     })
 }
 
+let menu = document.querySelector("#menu-icon");
+let navlist = document.querySelector(".navlist");
+menu.onclick = () => {
+    menu.classList.toggle('bx-x');
+    navlist.classList.toggle('open');
+}
+
+
+
 const currentPage = 1;
 const gallery = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.png', 'img8.png',
     'img9.png', 'img10.png', 'img11.png', 'img12.png', 'img13.png',
@@ -29,74 +38,76 @@ const gallery = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'im
     'img30.png', 'img31.png', 'img32.png', 'img33.png', 'img34.png'
 ]
 
-function displayGallery(pageNumber) {
-    const currentGallery = [];
-    document.getElementById('drawings-row-1').innerHTML = '';
-    document.getElementById('drawings-row-2').innerHTML = '';
-    for (let i = 1; i <= Math.ceil(gallery.length / 8); i++) {
-        document.getElementById('drawings-page-' + i).classList.remove('active');
-    }
-
-    for (let i = ((pageNumber - 1) * 8); i < ((pageNumber - 1) * 8) + 8; i++) {
-        if (i >= gallery.length) break;
-        currentGallery.push(gallery[i]);
-    }
-
-    for (let i = 0; i < currentGallery.length; i++) {
-        if (i >= gallery.length) break;
-        const div = document.createElement('div');
-        div.classList.add('images');
-        div.classList.add('animate');
-        const a = document.createElement('a');
-        a.href = `assets/images/${currentGallery[i]}`;
-        a.setAttribute('data-lightbox', 'models');
-        const img = document.createElement('img');
-        img.src = `assets/images/${currentGallery[i]}`;
-        a.appendChild(img);
-        div.appendChild(a);
-        if (i > 3) {
-            document.getElementById('drawings-row-2').appendChild(div);
-        } else {
-            document.getElementById('drawings-row-1').appendChild(div);
-        }
-    }
-    document.getElementById('drawings-page-' + pageNumber).classList.add('active');
+window.onresize = () => {
+    displayGallery(1);
+    displayAnimations(1);
 }
 
+function displayGallery(pageNumber) {
+    /* Drawings */
+    const numberOfImagesPerPage = Math.floor(window.innerWidth / 400) * 2;
+    drawings = document.querySelectorAll('.drawings')[0];
+    div = drawings.querySelectorAll('.images')[0];
+    div.innerHTML = '';
+    for (let i = ((pageNumber - 1) * numberOfImagesPerPage); i < ((pageNumber - 1) * numberOfImagesPerPage) + numberOfImagesPerPage; i++) {
+        if (i >= gallery.length) break;
+        const a = document.createElement('a');
+        a.href = `assets/images/${gallery[i]}`;
+        a.setAttribute('data-lightbox', 'models');
+        a.classList.add('animate');
+        const img = document.createElement('img');
+        img.src = `assets/images/${gallery[i]}`;
+        a.appendChild(img);
+        div.appendChild(a);
+    }
+    /* Page Selector */
+    pageSelector = document.querySelectorAll('.page-selector')[0];
+    pageSelector.innerHTML = '';
+    for (let i = 1; i <= Math.ceil(gallery.length / numberOfImagesPerPage); i++) {
+        const a = document.createElement('a');
+        a.id = 'drawings-page-' + i;
+        a.innerHTML = i;
+        a.onclick = () => {
+            displayGallery(i);
+        }
+        pageSelector.appendChild(a);
+    }
+    document.getElementById('drawings-page-' + pageNumber).classList.add('active');
+    pageSelector.classList.add('animate');
+}
 displayGallery(1);
 
 const gifs = ['gif1.gif', 'gif2.gif', 'gif3.gif', 'gif4.gif', 'gif5.gif', 'gif6.gif', 'gif7.gif'];
 function displayAnimations(pageNumber) {
-    const currentGallery = [];
-    document.getElementById('animations-row-1').innerHTML = '';
-    document.getElementById('animations-row-2').innerHTML = '';
-    for (let i = 1; i <= Math.ceil(gifs.length / 8); i++) {
-        document.getElementById('animations-page-' + i).classList.remove('active');
-    }
-
-    for (let i = ((pageNumber - 1) * 8); i < ((pageNumber - 1) * 8) + 8; i++) {
+    /* gifs */
+    const numberOfAnimationsPerPage = Math.floor(window.innerWidth / 400) * 2;
+    animations = document.querySelectorAll('.animations')[0];
+    div = animations.querySelectorAll('.images')[0];
+    div.innerHTML = '';
+    for (let i = ((pageNumber - 1) * numberOfAnimationsPerPage); i < ((pageNumber - 1) * numberOfAnimationsPerPage) + numberOfAnimationsPerPage; i++) {
         if (i >= gifs.length) break;
-        currentGallery.push(gifs[i]);
-    }
-
-    for (let i = 0; i < currentGallery.length; i++) {
-        if (i >= gifs.length) break;
-        const div = document.createElement('div');
-        div.classList.add('images');
-        div.classList.add('animate');
         const a = document.createElement('a');
-        a.href = `assets/images/${currentGallery[i]}`;
+        a.href = `assets/images/${gifs[i]}`;
+        a.classList.add('animate');
         a.setAttribute('data-lightbox', 'models');
         const img = document.createElement('img');
-        img.src = `assets/images/${currentGallery[i]}`;
+        img.src = `assets/images/${gifs[i]}`;
         a.appendChild(img);
         div.appendChild(a);
-        if (i > 3) {
-            document.getElementById('animations-row-2').appendChild(div);
-        } else {
-            document.getElementById('animations-row-1').appendChild(div);
+    }
+    /* Page Selector */
+    pageSelector = document.querySelectorAll('.page-selector')[1];
+    pageSelector.innerHTML = '';
+    for (let i = 1; i <= Math.ceil(gifs.length / numberOfAnimationsPerPage); i++) {
+        const a = document.createElement('a');
+        a.id = 'animations-page-' + i;
+        a.innerHTML = i;
+        a.onclick = () => {
+            displayAnimations(i);
         }
+        pageSelector.appendChild(a);
     }
     document.getElementById('animations-page-' + pageNumber).classList.add('active');
+    pageSelector.classList.add('animate');
 }
 displayAnimations(1);
