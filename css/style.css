@@ -123,7 +123,6 @@ section {
     flex-direction: column;
     min-height: 100vh;
     background: #B4C775;
-
 }
 
 h1 {
@@ -173,10 +172,19 @@ section.show-animate .animate {
     transform: translateX(0);
 }
 
-.about-me-container {
-    display: flex;
-    max-width: 80%;
-    text-align: center;
+#about-me-gif {
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh);
+    width: calc(100vw / 2);
+    background: #A46E54;
+}
+
+@media(max-width: 990px){
+    #about-me-gif {
+        height: 400px;
+        width: calc(100vw);
+    }
 }
 
 .about-me h1 {
@@ -185,6 +193,8 @@ section.show-animate .animate {
 
 .about-me p {
     color: #ffffff;
+    text-align: center;
+    margin: 10% 10%;
 }
 
 .contact {
@@ -286,17 +296,21 @@ section.show-animate .animate {
     float: left;
     padding: 8px 16px;
     text-decoration: none;
+    border-radius: 15px;
+    margin-right: 7px;
 }
 
 .drawings .page-selector a:hover:not(.active) {
     background-color: #7b7b7b;
     transition: 0.3s;
     transform: scale(1.1);
+    border-radius: 15px;
 }
 
 .drawings .page-selector a.active {
-    background-color: #4CAF50;
+    background-color: #2b59ef;
     color: white;
+    border-radius: 15px;
 }
 
 .animations .animate {
@@ -347,17 +361,21 @@ section.show-animate .animate {
     float: left;
     padding: 8px 16px;
     text-decoration: none;
+    border-radius: 15px;
+    margin-right: 7px;
 }
 
 .animations .page-selector a:hover:not(.active) {
     background-color: #4f4f4f;
     transition: 0.3s;
     transform: scale(1.1);
+    border-radius: 15px;
 }
 
 .animations .page-selector a.active {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
+    border-radius: 15px;
 }
 
 .reel {
