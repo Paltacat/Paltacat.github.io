@@ -8,7 +8,7 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         if (top >= offset && top < offset + height) {
             if (sec.classList.contains('home')) {
-                sec.parentElement.setAttribute('transition-style', 'in:wipe:right');
+                sec.parentElement.setAttribute('transition-style', 'in:circle:hesitate');
             }
             sec.classList.add('show-animate');
         }
