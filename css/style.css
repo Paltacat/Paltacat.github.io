@@ -44,7 +44,7 @@ header .logo .logo-img:hover{
     height: 20%;
     border-radius: 50%;
     overflow: hidden;
-    transform: scale(1.1);
+    transform: perspective(1000px) rotateX(360deg) scale(1.1);
     border: 4px solid grey;
 }
 
@@ -128,7 +128,7 @@ section {
 h1 {
     position: relative;
     font-size: 80px;
-    color: #FE9B5A;
+    color: #fe8534;
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
@@ -379,7 +379,7 @@ section.show-animate .animate {
 }
 
 .reel {
-    background-color: rgb(111, 25, 74);
+    background-color: #333333;
 }
 
 .reel h1 {
