@@ -28,8 +28,6 @@ menu.onclick = () => {
     navlist.classList.toggle('open');
 }
 
-
-
 const currentPage = 1;
 const gallery = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.png', 'img8.png',
     'img9.png', 'img10.png', 'img11.png', 'img12.png', 'img13.png',
