@@ -1,5 +1,6 @@
 let sections = document.querySelectorAll('section');
 let iframes = document.querySelectorAll('iframe');
+const touchscreen = false;
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -38,6 +39,10 @@ const gallery = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'im
 
 window.onresize = () => {
     displayGallery(1);
+}
+
+document.ontouchmove = (e) => {
+    touchscreen = true;
     displayAnimations(1);
 }
 
@@ -57,6 +62,9 @@ function displayGallery(pageNumber) {
         img.src = `assets/images/${gallery[i]}`;
         a.appendChild(img);
         div.appendChild(a);
+        img.onload = () => {
+            img.style.display = 'block';
+        }
     }
     /* Page Selector */
     pageSelector = document.querySelectorAll('.page-selector')[0];
@@ -75,7 +83,7 @@ function displayGallery(pageNumber) {
 }
 displayGallery(1);
 
-const gifs = ['gif1.gif', 'gif2.gif', 'gif3.gif', 'gif4.gif', 'gif5.gif', 'gif6.gif', 'gif7.gif'];
+const gifs = ['gif1.webm', 'gif2.webm', 'gif3.webm', 'gif4.webm', 'gif5.webm', 'gif6.webm', 'gif7.webm'];
 function displayAnimations(pageNumber) {
     /* gifs */
     const numberOfAnimationsPerPage = Math.floor(window.innerWidth / 400) * 2;
@@ -84,14 +92,27 @@ function displayAnimations(pageNumber) {
     div.innerHTML = '';
     for (let i = ((pageNumber - 1) * numberOfAnimationsPerPage); i < ((pageNumber - 1) * numberOfAnimationsPerPage) + numberOfAnimationsPerPage; i++) {
         if (i >= gifs.length) break;
-        const a = document.createElement('a');
-        a.href = `assets/images/${gifs[i]}`;
-        a.classList.add('animate');
-        a.setAttribute('data-lightbox', 'models');
-        const img = document.createElement('img');
+        const img = document.createElement('video');
         img.src = `assets/images/${gifs[i]}`;
-        a.appendChild(img);
-        div.appendChild(a);
+        img.type = 'video/webm';
+        img.classList.add('animate');
+        // Potrait mode
+        if (touchscreen) {
+            img.controls = true;
+        }
+        else {
+            img.onmouseover = () => {
+                img.play();
+                img.controls = true;
+            }
+            img.onmouseout = () => {
+                img.currentTime = 0;
+                img.pause();
+                img.controls = false;
+            }
+        }
+        div.appendChild(img);
+
     }
     /* Page Selector */
     pageSelector = document.querySelectorAll('.page-selector')[1];

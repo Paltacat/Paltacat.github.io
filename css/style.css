@@ -199,7 +199,7 @@ section.show-animate .animate {
 
 .about-me p {
     color: #ffffff;
-    text-align: center;
+    text-align: justify;
     margin: 10% 10%;
 }
 
@@ -248,7 +248,7 @@ section.show-animate .animate {
 }
 
 .contact a:hover {
-    color: black;
+    color: #fbb300;
     font-size: 55px;
 }
 
@@ -260,6 +260,7 @@ section.show-animate .animate {
 
 .drawings h1 {
     color: #ffffff;
+    text-shadow: 0px 0px 40px #000000;
 }
 
 .drawings .animate {
@@ -333,17 +334,18 @@ section.show-animate .animate {
 
 .animations h1 {
     color: #ffffff;
+    text-shadow: 0px 0px 40px #000000;
 }
 
-.animations .images img {
+.animations .images video {
     border-radius: 8px;
-    width: calc(100vh / 4);
+    width: calc(100vh / 3);
     height: auto;
     box-shadow: 0px 0px 30px #000;
     margin: 30px 30px;
 }
 
-.animations .images img:hover {
+.animations .images video:hover {
     transform: scale(1.2);
     transition: 0.5s;
 }
@@ -391,6 +393,7 @@ section.show-animate .animate {
 .reel h1 {
     color: #ffffff;
     margin-bottom: 20px;
+    text-shadow: 0px 0px 40px #000000;
     
 }
 
