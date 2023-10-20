@@ -9,13 +9,13 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         if (top >= offset && top < offset + height) {
             if (sec.classList.contains('home')) {
-                sec.parentElement.setAttribute('transition-style', 'in:circle:hesitate');
+                //sec.parentElement.setAttribute('transition-style', 'in:circle:hesitate');
             }
             sec.classList.add('show-animate');
         }
         else {
             if (sec.classList.contains('home')) {
-                sec.parentElement.setAttribute('transition-style', '');
+                //sec.parentElement.setAttribute('transition-style', '');
             }
             sec.classList.remove('show-animate');
         }
