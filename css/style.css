@@ -175,9 +175,9 @@ p {
 }
 
 section .animate {
-    transition: 1s;
+    transition-property: transform, filter, opacity;
     filter: blur(10px);
-
+    transition-duration: 1s;
 }
 
 section.show-animate .animate {
@@ -242,9 +242,6 @@ section.show-animate .animate {
 }
 
 @media (max-width: 1100px) {
-    .about-me p {
-        font-size: 45px;
-    }
 
     #about-me-gif {
         height: calc(100vh / 2);
@@ -258,12 +255,14 @@ section.show-animate .animate {
 
 .about-me p {
     color: #FCD8F7;
-    text-align: justify;
+    text-align: left;
     margin: 10% 10%;
+    font-size: xx-large;
 }
 
+/* CONTACT */
+
 .contact {
-    background: #fe9c5a;
     background-image: url("../assets/images/contact_background_3.png");
     background-repeat: no-repeat;
     background-size: cover;
