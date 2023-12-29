@@ -30,11 +30,12 @@ menu.onclick = () => {
 }
 
 const currentPage = 1;
-const gallery = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.png', 'img8.png',
+const gallery = ['img39.png', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.png', 'img8.png',
     'img9.png', 'img10.png', 'img11.png', 'img12.png', 'img13.png',
     'img14.png', 'img15.png', 'img16.png', 'img17.png', 'img18.png', 'img19.png', 'img20.png', 'img21.png',
     'img22.png', 'img23.png', 'img24.png', 'img25.png', 'img26.png', 'img27.png', 'img28.png', 'img29.png',
-    'img30.png', 'img31.png', 'img32.png', 'img33.png', 'img34.png', 'img35.png', 'img36.png', 'img37.png'
+    'img30.png', 'img31.png', 'img32.png', 'img33.png', 'img34.png', 'img35.png', 'img36.png', 'img37.png',
+    'img38.png'
 ];
 window.onresize = () => {
     displayGallery(1);
