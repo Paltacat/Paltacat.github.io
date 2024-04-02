@@ -3,30 +3,6 @@
     src: url(../assets/fonts/Rubik-VariableFont_wght.ttf) format("truetype");
 }
 
-body::-webkit-scrollbar {
-    width: var(--scroll-size, 10px);
-    height: var(--scroll-size, 10px);
-}
-
-body::-webkit-scrollbar-track {
-    background-color: var(--scroll-track, transparent);
-    border-radius: var(--scroll-track-radius, var(--scroll-radius));
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: var(--scroll-thumb-color, rgb(128, 128, 128));
-    background-image: var(--scroll-thumb, none);
-    border-radius: var(--scroll-thumb-radius, var(--scroll-radius));
-}
-
-:root {
-    --scroll-size: 12px;
-  --scroll-radius: 20px;
-  --scroll-track: rgb(255 255 255 / 10%);
-  --scroll-thumb: linear-gradient(45deg, #0040ff, #fd3ffa);
-}
-
-
 * {
     margin: 0;
     padding: 0;
@@ -188,7 +164,7 @@ section.show-animate .animate {
 #home-text>h1 {
     color: #ffffff;
     text-shadow: 10px 10px 10px #000000;
-
+    cursor: default;
     border-radius: 10px;
     padding: 10px;
 }
@@ -196,7 +172,7 @@ section.show-animate .animate {
 #home-text>p {
     color: #ffffff;
     text-shadow: 10px 10px 10px #000000;
-
+    cursor: default;
     border-radius: 10px;
     text-align: center;
 }
@@ -251,10 +227,13 @@ section.show-animate .animate {
 
 .about-me h1 {
     color: #D8D867;
+    cursor: default;
+    text-shadow: 10px 10px 10px #000000;
 }
 
 .about-me p {
     color: #FCD8F7;
+    cursor: default;
     text-align: left;
     margin: 10% 10%;
     font-size: xx-large;
@@ -286,14 +265,30 @@ section.show-animate .animate {
 
 .contact h1 {
     color: #fbb300;
+    cursor: default;
+    text-shadow: 5px 5px 5px #000000;
+    margin-bottom: 5px;
+    border-bottom: 5px solid #fbb300;
 }
 
-.contact p {
+.contact a.email {
     color: white;
     text-align: center;
+    position: relative;
+    font-size: 50px;
+    font-weight: normal;
+    transition: all .55s ease;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 5px 5px 5px #000000;
 }
 
-.contact a {
+.contact a.email:hover {
+    color: #9ed867;
+    font-size: 52px;
+}
+
+.contact a.social-icons {
     color: white;
     text-decoration: none;
     font-size: 50px;
@@ -303,10 +298,11 @@ section.show-animate .animate {
     margin: 0 20px;
     transition: all .55s ease;
     top: 0;
+    text-shadow: 5px 5px 5px #000000;
 }
 
-.contact a:hover {
-    color: #fbb300;
+.contact a.social-icons:hover {
+    color: #9ed867;
     font-size: 55px;
 }
 
@@ -319,6 +315,7 @@ section.show-animate .animate {
 .drawings h1 {
     color: #ffffff;
     text-shadow: 10px 10px 10px #000000;
+    cursor: default;
 }
 
 .drawings .animate {
@@ -370,6 +367,11 @@ section.show-animate .animate {
     transition: 0.3s;
     transform: scale(1.1);
     border-radius: 15px;
+    cursor: pointer;
+}
+
+.drawings .page-selector a.active:hover {
+    cursor: default;
 }
 
 .drawings .page-selector a.active {
@@ -393,6 +395,7 @@ section.show-animate .animate {
 .animations h1 {
     color: #ffffff;
     text-shadow: 10px 10px 10px #000000;
+    cursor: default;
 }
 
 .animations .images video {
@@ -436,12 +439,17 @@ section.show-animate .animate {
     transition: 0.3s;
     transform: scale(1.1);
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .animations .page-selector a.active {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     border-radius: 15px;
+}
+
+.animations .page-selector a.active:hover {
+    cursor: default;
 }
 
 .reel {
@@ -452,7 +460,7 @@ section.show-animate .animate {
     color: #ffffff;
     margin-bottom: 20px;
     text-shadow: 10px 10px 10px #000000;
-
+    cursor: default;
 }
 
 .reel .animate {
