@@ -213,8 +213,8 @@ section.show-animate .animate {
     justify-content: center;
     align-items: center;
     height: calc(70vh);
-    width: calc(40vw);
-    background: #A46E54;
+    width: calc(50vw);
+    background: transparent;
 }
 
 @media (max-width: 1100px) {
@@ -232,7 +232,7 @@ section.show-animate .animate {
 }
 
 .about-me p {
-    color: #FCD8F7;
+    color: #ffffff;
     cursor: default;
     text-align: left;
     margin: 10% 10%;
