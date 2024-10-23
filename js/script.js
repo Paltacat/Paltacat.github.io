@@ -30,13 +30,10 @@ menu.onclick = () => {
 }
 
 const currentPage = 1;
-const gallery = ['img39.png', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.png', 'img8.png',
-    'img9.png', 'img10.png', 'img11.png', 'img12.png', 'img13.png',
-    'img14.png', 'img15.png', 'img16.png', 'img17.png', 'img18.png', 'img19.png', 'img20.png', 'img21.png',
-    'img22.png', 'img23.png', 'img24.png', 'img25.png', 'img26.png', 'img27.png', 'img28.png', 'img29.png',
-    'img30.png', 'img31.png', 'img32.png', 'img33.png', 'img34.png', 'img35.png', 'img36.png', 'img37.png',
-    'img38.png'
-];
+const gallery = [ 'img10.png','img9.png', 'img46.png', 'img45.png','img12.png', 'img56.png','img16.png','img8.png', 'img17.png', 'img18.png','img59.png','img58.png', 'img19.png', 
+'img20.png', 'img22.png', 'img25.png', 'img27.png', 'img29.png', 'img30.png', 'img31.png', 'img32.png', 'img33.png', 'img34.png', 'img35.png', 'img36.png', 'img37.png',
+ 'img38.png', 'img40.png', 'img41.png', 'img42.png', 'img43.png', 'img44.png', 'img47.png', 'img48.png', 'img49.png', 'img50.png', 'img51.png', 'img52.png', 'img53.png', 
+     'img54.png', 'img55.png'];
 window.onresize = () => {
     displayGallery(1);
 }
@@ -83,7 +80,49 @@ function displayGallery(pageNumber) {
 }
 displayGallery(1);
 
-const gifs = ['gif1.webm', 'gif2.webm', 'gif3.webm', 'gif4.webm', 'gif5.webm', 'gif6.webm', 'gif7.webm'];
+const personalWork = ['img39.png', 'img57.png', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.png', 'img11.png', 'img14.png', 'img24.png', 'img26.png', 
+'img28.png', ];
+function displayPersonalWork(pageNumber) {
+    /* Drawings */
+    const numberOfImagesPerPage = Math.floor(window.innerWidth / 400) * 2;
+    drawings = document.querySelectorAll('.personal-work')[0];
+    div = drawings.querySelectorAll('.images')[0];
+    div.innerHTML = '';
+    for (let i = ((pageNumber - 1) * numberOfImagesPerPage); i < ((pageNumber - 1) * numberOfImagesPerPage) + numberOfImagesPerPage; i++) {
+        if (i >= personalWork.length) break;
+        const a = document.createElement('a');
+        a.href = `assets/images/${personalWork[i]}`;
+        a.setAttribute('data-lightbox', 'models');
+        a.classList.add('animate');
+        const img = document.createElement('img');
+        img.src = `assets/images/${personalWork[i]}`;
+        a.appendChild(img);
+        div.appendChild(a);
+        img.onload = () => {
+            img.style.display = 'block';
+        }
+    }
+    /* Page Selector */
+    pageSelector = document.querySelectorAll('.page-selector')[1];
+    pageSelector.innerHTML = '';
+    for (let i = 1; i <= Math.ceil(personalWork.length / numberOfImagesPerPage); i++) {
+        const a = document.createElement('a');
+        a.id = 'personal-work-page-' + i;
+        a.innerHTML = i;
+        a.onclick = () => {
+            displayPersonalWork(i);
+        }
+        pageSelector.appendChild(a);
+    }
+    document.getElementById('personal-work-page-' + pageNumber).classList.add('active');
+    pageSelector.classList.add('animate');
+}
+displayPersonalWork(1);
+
+
+
+
+// Por mientras no se usa esto
 function displayAnimations(pageNumber) {
     /* gifs */
     const numberOfAnimationsPerPage = Math.floor(window.innerWidth / 400) * 2;
@@ -94,7 +133,7 @@ function displayAnimations(pageNumber) {
         if (i >= gifs.length) break;
         const img = document.createElement('video');
         img.src = `assets/images/${gifs[i]}`;
-        img.type = 'video/webm';
+       // img.type = 'video/webm';
         img.classList.add('animate');
         // Potrait mode
         if (touchscreen) {
@@ -129,4 +168,4 @@ function displayAnimations(pageNumber) {
     document.getElementById('animations-page-' + pageNumber).classList.add('active');
     pageSelector.classList.add('animate');
 }
-displayAnimations(1);
+//displayAnimations(1);

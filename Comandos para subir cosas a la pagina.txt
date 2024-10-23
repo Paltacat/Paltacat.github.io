@@ -1,0 +1,21 @@
+Paso 1: Abre Terminal en la carpeta:
+
+Click derecho, abrir terminal.
+
+Tiene que abrirse la consola con la ruta en Paltacat.github.io
+
+Luego puedes poner los siguientes comandos dependiendo de lo que vayas a hacer:
+
+- Para obtener la ultima versión subida:
+
+	git pull
+
+- Para subir cambios:
+
+	git add .
+	git commit -m "Mensaje de cambio"
+	git push
+
+- Si es que se te borró la carpeta:
+
+	git clone https://github.com/Paltacat/Paltacat.github.io.git
